@@ -9,6 +9,9 @@
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <property name="javaFileEncoding" value="UTF-8"/>
         <property name="useMapperCommentGenerator" value="true"/>
+        <property name="delimitedIdentifier" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
@@ -18,20 +21,19 @@
 
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.211.55.10:3306/iam?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false&amp;nullCatalogMeansCurrent=true"
+                        connectionURL="jdbc:mysql://10.211.55.10:3306/file?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false&amp;nullCatalogMeansCurrent=true"
                         userId="root"
-                        password="123456">
+                        password="mysql-local-pd@moreasy.tech">
         </jdbcConnection>
 
         <!--生成的文件的存放位置-->
-        <javaModelGenerator targetPackage="tech.moreasy.iam.domain.entity" targetProject="output"/>
+        <javaModelGenerator targetPackage="tech.moreasy.file.domain.entity" targetProject="output"/>
         <sqlMapGenerator targetPackage="xml" targetProject="output"/>
-        <javaClientGenerator targetPackage="tech.moreasy.iam.mapper" targetProject="output" type="XMLMAPPER"/>
+        <javaClientGenerator targetPackage="tech.moreasy.file.mapper" targetProject="output" type="XMLMAPPER"/>
 
 
 
-        <table tableName="admin_user"> <generatedKey column="id" sqlStatement="JDBC"/></table>
-        <table tableName="admin_role"> <generatedKey column="id" sqlStatement="JDBC"/></table>
+        <table tableName="admin_file"> <generatedKey column="id" sqlStatement="JDBC"/></table>
 
 
 
